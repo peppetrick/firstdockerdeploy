@@ -1,0 +1,27 @@
+{
+  "name": "@peppetrick/first-app-openshift",
+  "version": "1.0.0",
+  "description": "first test app deploy on openshift",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peppetrick/firstdockerdeploy.git"
+  },
+  "keywords": [
+    "docker"
+  ],
+  "author": "giuseppe tricarico",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peppetrick/firstdockerdeploy/issues"
+  },
+  "homepage": "https://github.com/peppetrick/firstdockerdeploy#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "package.json": "^2.0.1"
+  }
+}
