@@ -8,6 +8,10 @@ var bodyParser =  require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+ 
+
 //get alert list to display on web admin page
 app.get('/ask', function (req, res, next) {
   console.log('get request');
@@ -16,7 +20,8 @@ app.get('/ask', function (req, res, next) {
    res.send(JSON.stringify({"answer":"ok"}));
 });
 
-app.listen(3000, function () {
-    console.log('Example app listening on port 3000!');
+app.listen(server_port,server_ip_address, function () {
+    console.log( "Listening on " + server_ip_address + ", port " + server_port )
   });
+
   
