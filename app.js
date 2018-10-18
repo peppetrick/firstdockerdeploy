@@ -18,7 +18,7 @@ app.get('/ask', function (req, res, next) {
   next();
 }, function (req, res) {
 	const fs = require('fs')
-	fs.readFile('reportList.json','utf8', (err, data) => {
+	fs.readFile('/data/reportList.json','utf8', (err, data) => {
             if (err) {
               console.log("error reading file",err)
               return
