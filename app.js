@@ -12,13 +12,24 @@ var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
 var server_ip_address = process.env.IP || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0'
  
 
-//get alert list to display on web admin page
+
 app.get('/ask', function (req, res, next) {
   console.log('get request');
   next();
 }, function (req, res) {
-    console.log("sent response")
+	const fs = require('fs')
+	fs.readFile('reportList.json','utf8', (err, data) => {
+            if (err) {
+              console.log("error reading file",err)
+              return
+            }else{
+              console.log(data)    
+			  console.log("sent response")
    res.send(JSON.stringify({"answer":"ok"}));
+              return;
+            }
+})
+    
 });
 
 app.listen(server_port,server_ip_address, function () {
